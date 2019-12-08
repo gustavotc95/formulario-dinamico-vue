@@ -1,0 +1,152 @@
+#landing {
+    background: url('./assets/images/landing-bg-desktop.jpg') no-repeat;
+    background-size: contain;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    background-position: 100% 0;
+    .container {
+        padding: 15px;
+    }
+    .regular-logo {
+        max-width: 125px;
+        margin-top: 5px;
+    }
+    h1 { 
+        color: #ff3464;
+        font-family: 'Lato', sans-serif;
+        font-size: 40px;
+        font-weight: 900;
+        letter-spacing: 1.36px;
+        margin-top: 180px;
+        display: block;
+        max-width: 400px;
+        line-height: 46px;
+        @media only screen and (min-width: 1000px){
+            margin-top: 120px;
+        }
+    }
+    .gender-description {
+        color: #444;
+        margin-top: 40px;
+        font-family: 'Lato', sans-serif;
+        font-size: 20px;
+        margin-bottom: 15px;
+        font-weight: 700;
+        letter-spacing: .68px;
+        line-height: 23px;
+    }
+    .gender-buttons {
+        margin-bottom: 30px;
+        .btn{
+            text-transform: none;
+        }
+        .icon {
+            position: absolute;
+            display: block;
+            left: 15px;
+            top: 10px;
+            height: 30px;
+            .female {
+                background-position: -2px -1472px;
+                width: 22px;
+                height: 30px;
+            }
+            .male {
+                background-position: -26px -1472px;
+                width: 22px;
+                height: 29px;
+            }
+        }
+        .forward {
+            position: absolute;
+            right: 15px;
+            top: 50%;
+            margin-top: -7px;
+            &.forward-female {
+                background-position: -41px -1064px;
+                width: 9px;
+                height: 15px;
+            }
+            &.forward-male {
+                background-position: -41px -1081px;
+                width: 9px;
+                height: 15px;
+            }
+        }
+        .btn-female, .btn-male {
+            border-radius: 9px;
+            background-color: #fff;
+            font-size: 15px;
+            font-weight: 700;
+            letter-spacing: .51px;
+            line-height: 18px;
+            outline: none;
+            text-align: center;
+            position: relative;
+            margin-top: 15px;
+            padding: 15px;
+            width: 100%;
+            display: inline-block;
+            max-width: 280px;
+            @media only screen and (min-width: 1000px){
+                display: inline-block;
+                max-width: 220px;
+            }
+            &:hover{
+                -webkit-box-shadow: 0 4px 11px -2px rgba(131, 131, 131, 0.5);
+                box-shadow: 0 4px 11px -2px rgba(131, 131, 131, 0.5);
+                color: #636b6f;
+                text-decoration: none;
+                -webkit-filter: grayscale(100%);
+                filter: grayscale(100%);
+            }
+        }
+        .btn-female {
+            -webkit-box-shadow: 0 4px 11px -2px rgba(255,52,100,.5);
+            box-shadow: 0 4px 11px -2px rgba(255,52,100,.5);
+            color: #ff3464;
+        }
+        .btn-male {
+            margin-left: 15px;
+            -webkit-box-shadow: 0 4px 11px -2px rgba(86,70,143,.5);
+            box-shadow: 0 4px 11px -2px rgba(86,70,143,.5);
+            color: #56468f;
+        }
+    }
+
+    .links {
+        padding: 15px;
+        margin-top: 25px;
+        a {
+            opacity: .7;
+            color: #444;
+            font-size: 15px;
+            display: block;
+            letter-spacing: .51px;
+            line-height: 22px;
+        }
+    }
+
+    .footer-logo {
+        max-width: 115px;
+        margin: 40px auto;
+        display: block;
+    }
+
+    .copyright {
+        opacity: .7;
+        color: #444;
+        font-size: 15px;
+        letter-spacing: .51px;
+        line-height: 18px;
+        margin-top: 20px;
+        text-align: center;
+        text-transform: uppercase;
+        margin-top: 50px;
+        .disclaimer {
+            margin-top: 10px;
+            font-size: 12px;
+        }
+    }
+}

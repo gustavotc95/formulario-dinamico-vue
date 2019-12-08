@@ -1,0 +1,17 @@
+body{
+    background: #fff;
+    color: #444;
+    width: 100%;
+    margin: 0;
+    font-family: 'Karla', sans-serif;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+.avocado, .back, .beef, .butter, .capers, .cheese, .chicken, .coconut, .egg, .eggs, .female, .fish, .forward-female, .forward-male, .goat-cheese, .ham, .icons, .lamb, .male, .milk, .mushroom, .mushrooms, .nuts, .olives, .onions, .pork, .seafood, .veal {
+    display: inline-block;
+    background: url('./assets/images/icons.png') no-repeat;
+    overflow: hidden;
+    text-indent: -9999px;
+    text-align: left;
+}

@@ -1,0 +1,32 @@
+
+@mixin input-placeholder {
+    &.placeholder { @content; }
+    &:-moz-placeholder { @content; }
+    &::-moz-placeholder { @content; }
+    &:-ms-input-placeholder { @content; }
+    &::-webkit-input-placeholder { @content; }
+}
+
+@function get-value($n) {
+    @return $n / ($n * 0 + 1);
+}
+
+@mixin font-size($font-size) {
+
+    $base-px-size: $font-base;
+
+    font-size: $font-size;
+    font-size: (get-value($font-size) / $base-px-size) + rem;
+}
+
+@function getrem($n) {
+    $base-px-size: $font-base;
+
+    @return (get-value($n) / $base-px-size) + rem;
+}
+
+@function gr($n) {
+    @return getrem($n);
+}
+
+
