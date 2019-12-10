@@ -13,16 +13,16 @@
         </div>
 
         <div class="gender-buttons">
-          <button class="btn btn-female" data-gender="female">
+          <router-link to="/quiz/female" class="btn btn-female" data-gender="female">
             <span class="icon"><i class="female"></i></span>
               Female
             <i class="forward-female forward"></i>
-          </button>
-          <button class="btn btn-male" data-gender="male">
+          </router-link>
+          <router-link to="/quiz/male"  class="btn btn-male" data-gender="male">
             <span class="icon"><i class="male"></i></span>
               Male
             <i class="forward-male forward"></i>
-          </button>
+          </router-link >
         </div>
 
         <div class="row">

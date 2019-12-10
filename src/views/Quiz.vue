@@ -11,11 +11,14 @@
         </nav>
         <div class="subheader">
             <div class="progress-bar">
-                <div class="progress"></div>
+                <div class="progress" :style="`width: ${progress}%;`"></div>
             </div>
         </div>
         <div class="container">
-            <Question v-for="(question, index) of questions" :key="index" :question="question"/>
+            <div v-for="(question, index) of questions" :key="index" >
+                <Question :question="question" :dataStep="index" v-if="step === index"/>
+            </div>
+            <QuestionForm :dataStep="questions.length" v-if="step === questions.length"/>
         </div>
     </div>
 </div>
@@ -23,15 +26,19 @@
 
 <script>
 import Question from '@/components/Question.vue'
+import QuestionForm from '@/components/QuestionForm.vue'
 
 export default {
     name: 'Quiz',
     components: {
-        Question
+        Question,
+        QuestionForm
     },
     data () {
         return {
+            step: 0,
             quizGender: this.$route.params.gId,
+            progress: 0,
             questions: [
                 {
                     'id': 1,
@@ -85,9 +92,32 @@ export default {
                         'I am vegetarian'
                     ]
                 },
-            ]
+            ],
         }
     },
+
+    methods: {
+        listener () {
+            this.$bus.$on('NEXT_STEP', () => {
+                this.step += 1
+                this.progress += 100/this.questions.length-1;
+            })
+        },
+        back (){
+            if (this.step > 0) {
+                this.step -= 1
+                this.progress -= 100/this.questions.length-1;
+            } else {
+                this.$router.push({ path: '/' })
+            }
+        }
+    },
+
+    mounted () {
+        this.listener()
+        this.progress = 100/this.questions.length-1
+        localStorage.removeItem('answers')
+    }
 }
 </script>
 
