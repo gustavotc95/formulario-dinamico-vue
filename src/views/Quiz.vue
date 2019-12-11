@@ -1,27 +1,27 @@
 <template>
-<div class="quiz">
-    <div class="quiz-container">
-        <nav class="mainNavbar navbar navbar-expand-lg" style="display:block;">
-            <div class="container">
-                <img src="../assets/images/back.svg" alt="Back" class="btn-back" @click="back()">
-                <div class="navbar-brand">
-                    <img src="../assets/images/logo.svg" alt="KetoCycle.Diet" class="regular-logo">
+    <div class="quiz">
+        <div class="quiz-container">
+            <nav class="mainNavbar navbar navbar-expand-lg" style="display:block;">
+                <div class="container">
+                    <img src="../assets/images/back.svg" alt="Back" class="btn-back" @click="back()">
+                    <div class="navbar-brand">
+                        <img src="../assets/images/logo.svg" alt="KetoCycle.Diet" class="regular-logo">
+                    </div>
+                </div>
+            </nav>
+            <div class="subheader">
+                <div class="progress-bar">
+                    <div class="progress" :style="`width: ${progress}%;`"></div>
                 </div>
             </div>
-        </nav>
-        <div class="subheader">
-            <div class="progress-bar">
-                <div class="progress" :style="`width: ${progress}%;`"></div>
+            <div class="container">
+                <div v-for="(question, index) of questions" :key="index" >
+                    <Question :question="question" :dataStep="index" v-if="step === index"/>
+                </div>
+                <QuestionForm :dataStep="questions.length" v-if="step === questions.length"/>
             </div>
-        </div>
-        <div class="container">
-            <div v-for="(question, index) of questions" :key="index" >
-                <Question :question="question" :dataStep="index" v-if="step === index"/>
-            </div>
-            <QuestionForm :dataStep="questions.length" v-if="step === questions.length"/>
         </div>
     </div>
-</div>
 </template>
 
 <script>
@@ -101,6 +101,10 @@ export default {
             this.$bus.$on('NEXT_STEP', () => {
                 this.step += 1
                 this.progress += 100/this.questions.length-1;
+            })
+
+            this.$bus.$on('NEXT_STEP_FORM', payload => {
+                console.log(payload);
             })
         },
         back (){
