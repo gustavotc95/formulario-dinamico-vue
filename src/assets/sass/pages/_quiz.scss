@@ -25,6 +25,9 @@
             position: relative;
             min-height: 74px;
             border: 1px solid transparent;
+            @media only screen and (max-width: 1000px){
+                margin-bottom: 0;
+            }
             .navbar-brand {
                 float: none;
                 text-align: center;

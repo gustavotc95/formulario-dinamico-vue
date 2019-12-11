@@ -73,15 +73,17 @@ export default {
     methods: {
         nextStep() {
             if (this.infos.years && this.infos.height && this.infos.weight && this.infos.targetWeight ) {
-                this.$bus.$emit('NEXT_STEP_FORM', this.infos)
                 this.msgBtn = 'Processing...'
-                this.showResult()
+                console.log(this.infos);
+                setTimeout( () =>  this.showResult(this.infos), 1000);
+                return true
             }
             this.showError = true
         },
 
-        showResult(){
-            setTimeout( () => this.$router.push({ path: '/results', params: { infos: this.infos } }), 1000);
+        showResult(data){
+            localStorage.infosForm = JSON.stringify(data)
+            this.$router.push({ path: '/results' })
         }
     }
 }

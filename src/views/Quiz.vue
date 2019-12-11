@@ -102,10 +102,6 @@ export default {
                 this.step += 1
                 this.progress += 100/this.questions.length-1;
             })
-
-            this.$bus.$on('NEXT_STEP_FORM', payload => {
-                console.log(payload);
-            })
         },
         back (){
             if (this.step > 0) {

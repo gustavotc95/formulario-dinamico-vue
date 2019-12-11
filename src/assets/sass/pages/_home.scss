@@ -5,6 +5,13 @@
     margin: 0;
     padding: 0;
     background-position: 100% 0;
+    @media only screen and (max-width: 1000px) and (min-width: 500px){
+        background: #fff;
+    }
+    @media only screen and (max-width: 767px){
+        background-position: 0 -35px;
+        background-image: url('./assets/images/landing-bg.jpg');
+    }
     .container {
         padding: 15px;
     }
@@ -24,6 +31,12 @@
         line-height: 46px;
         @media only screen and (min-width: 1000px){
             margin-top: 120px;
+        }
+        @media only screen and (max-width: 1000px) and (min-width: 500px){
+            margin-top: 30px;
+        }
+        @media only screen and (max-width: 640px){
+            max-width: 285px;
         }
     }
     .gender-description {
@@ -112,6 +125,9 @@
             -webkit-box-shadow: 0 4px 11px -2px rgba(86,70,143,.5);
             box-shadow: 0 4px 11px -2px rgba(86,70,143,.5);
             color: #56468f;
+            @media only screen and (max-width: 640px){
+                margin-left: 0;
+            }
         }
     }
 

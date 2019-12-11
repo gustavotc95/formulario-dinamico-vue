@@ -26,7 +26,7 @@
         </div>
 
         <div class="row">
-          <div class="col-xs-6 links col-lg-4">
+          <div class="col-xs-6 links col-md-6 col-lg-4">
             <a href="#">F.A.Q</a>
             <a href="#"><strong>Access my plan</strong></a>
             <a href="#">General conditions</a>
@@ -34,7 +34,7 @@
             <a href="#">Contact us</a>
           </div>
 
-          <div class="col-xs-6 col-lg-4">
+          <div class="col-xs-6 col-md-6 col-lg-4">
             <img src="../assets/images/single-color-logo.svg" class="footer-logo">
           </div>
 

@@ -1,5 +1,5 @@
 <template>
-  <div id="app">
+  <div id="form-dinamico">
     <router-view/>
   </div>
 </template>
