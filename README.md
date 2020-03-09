@@ -1,4 +1,6 @@
-# formulario-dinamico-vue
+# Formulário dinâmico Vue
+
+Um Formulário dinâmico usando vue. Esse formulário é um clone do site https://ketocycle.diet/ sem fins lucrativos e nem comerciais, sendo somente para estudos.
 
 ## Project setup
 ```
