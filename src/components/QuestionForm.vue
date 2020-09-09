@@ -74,7 +74,6 @@ export default {
         nextStep() {
             if (this.infos.years && this.infos.height && this.infos.weight && this.infos.targetWeight ) {
                 this.msgBtn = 'Processing...'
-                console.log(this.infos);
                 setTimeout( () =>  this.showResult(this.infos), 1000);
                 return true
             }
